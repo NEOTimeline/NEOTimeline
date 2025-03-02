@@ -19,14 +19,11 @@ ul {
 .all {
     display: grid;
     /* ここで、カラムと行のサイズを変更 */
-    grid-template-columns: 250px 1fr;
-    /* サイドバーの幅を250px、残りを1fr */
-    grid-template-rows: 60px 1fr;
-    /* 上部の高さを40px、残りの行は1fr */
+    grid-template-columns: min(250px, 20%) 1fr min(25%, 300px); /* サイドバーの幅を250px、残りを1fr */
+    grid-template-rows: 60px 1fr; /* 上部の高さを40px、残りの行は1fr */
     grid-column-gap: 0;
     grid-row-gap: 0;
-    grid-auto-columns: min-content;
-    /* 自動列幅 */
+    grid-auto-columns: min-content; /* 自動列幅 */
     width: 100vw;
     height: 100vh;
     margin: 0;
@@ -49,11 +46,9 @@ ul {
     }
 
     header {
-        grid-area: 1 / 2 / 2 / 3;
+        grid-area: 1 / 2 / 1 / 4;
         /* 上部中央に配置 */
         background-color: lightskyblue;
-        height: 40px;
-        /* 高さを40pxに設定 */
         padding: 20px;
     }
 
@@ -74,8 +69,7 @@ ul {
         margin: 20px 0;
 
         .timeline-year-header {
-            background-color: rgb(221, 255, 216);
-
+                background-color:rgb(221, 255, 216);
             h2 {
                 margin: 20px;
                 width: 100px;
@@ -86,8 +80,6 @@ ul {
     }
 
     .timeline-year-item {
-
-
         .timeline-item {
             background-color: #ffffff;
             margin: 10px 0;
@@ -103,4 +95,10 @@ ul {
             }
         }
     }
+}
+
+.details {
+    grid-area: 2/3/3/4;
+    padding: 20px;
+    background-color: lemonchiffon;
 }
